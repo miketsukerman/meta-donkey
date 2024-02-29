@@ -48,6 +48,7 @@ EXTRA_TOOLS = " \
     zip \
     python3-donkeycar \
     python3-opencv \
+    tensorflow \
 "
 
 IMAGE_INSTALL += " \
