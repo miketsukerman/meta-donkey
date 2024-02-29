@@ -1,2 +1,4 @@
-# meta-donkey
+# meta-donkeycar
+
 Donkeycar yocto layer
+
