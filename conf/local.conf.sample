@@ -21,21 +21,14 @@ VIRTUAL-RUNTIME_init_manager = "systemd"
 
 MACHINE_FEATURES:remove = "apm"
 
-IMAGE_FSTYPES = "tar.xz ext4 ext4.gz wic"
+IMAGE_FSTYPES = "tar.xz ext4 ext4.gz wic wic.bmap"
 
 RPI_USE_U_BOOT = "1"
 
 PREFERRED_PROVIDER_u-boot-fw-utils = "libubootenv"
 
 # Choose the board you are building for
-#MACHINE = "raspberrypi"
-#MACHINE = "raspberrypi0"
-#MACHINE = "raspberrypi0-wifi"
-#MACHINE = "raspberrypi2"
-#MACHINE = "raspberrypi3"
 MACHINE = "raspberrypi4"
-#MACHINE = "raspberrypi-cm"
-#MACHINE = "raspberrypi-cm3"
 
 # Choices are Image or zImage if NOT using u-boot (no u-boot is the default)
 # Choices are uImage or zImage if using u-boot, though if you choose zImage
@@ -70,11 +63,10 @@ PACKAGE_CLASSES = "package_rpm"
 SDKMACHINE = "x86_64"
 
 # for no root passwd uncomment the following and comment the two extra user lines
-#EXTRA_IMAGE_FEATURES = "debug-tweaks"
+EXTRA_IMAGE_FEATURES = "debug-tweaks"
 
 # for a root passwd, change 123456789 below to your password
 # inherit extrausers
-
 # EXTRA_USERS_PARAMS = "usermod -P '123456789' root; "
 
 USER_CLASSES = "buildstats"

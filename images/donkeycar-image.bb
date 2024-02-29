@@ -46,7 +46,7 @@ EXTRA_TOOLS = " \
     unzip \
     wget \
     zip \
-    python3-donkeycarcar \
+    python3-donkeycar \
     python3-opencv \
 "
 
@@ -100,25 +100,9 @@ WIFI = " \
     wpa-supplicant \
 "
 
-DEV_EXTRAS = " \
-    serialecho  \
-    spiloop \
-"
-
 RPI_STUFF = " \
     userland \
     spidev-test \
-    pijuiceboot \
-    python3-pijuice \
-    pijuice-firmware \
-    python3-urwid \
-    python3-smbus \
-"
-
-GEO_STUFF = " \
-    adc-read \
-    geod \
-    miniseed \
 "
 
 GPS_STUFF = " \
@@ -127,14 +111,8 @@ GPS_STUFF = " \
     geoclue \
 "
 
-POWER_MANAGEMENT = " \
-    nut \
-    collectd \
-"
-
 ADDONS = " \
     python3 \
-    nginx \
 "
 
 SW_UPDATE = " \
@@ -146,9 +124,7 @@ SW_UPDATE = " \
 IMAGE_INSTALL += " \
     firewall \
     ${ADDONS} \
-    ${POWER_MANAGEMENT} \ 
     ${GPS_STUFF} \
-    ${DEV_EXTRAS} \
     ${RPI_STUFF} \
     ${WIFI} \
     ${SW_UPDATE} \
@@ -157,24 +133,6 @@ IMAGE_INSTALL += " \
 TOOLCHAIN_TARGET_TASK += " \
     kernel-devsrc \
     pkgconfig \
-    concurrentqueue-dev \
-    cppzmq-dev \
-    zeromq-staticdev \
-    "
-TOOLCHAIN_HOST_TASK += " \
-    nativesdk-perl \
-    nativesdk-perl-module-lib \
-    nativesdk-perl-module-base \
-    nativesdk-perl-module-bytes \
-    nativesdk-perl-module-data-dumper \
-    nativesdk-perl-module-digest-md5 \
-    nativesdk-perl-module-file-spec \
-    nativesdk-perl-module-file-spec-functions \
-    nativesdk-perl-module-file-spec-win32 \
-    nativesdk-perl-module-findbin \
-    nativesdk-perl-module-getopt-long \
-    nativesdk-perl-module-pod-text \
-    nativesdk-perl-module-getopt-std \
     "
 
 IMAGE_ROOTFS_MAXSIZE = "2097152"
