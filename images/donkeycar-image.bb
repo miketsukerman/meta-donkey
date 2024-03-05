@@ -136,6 +136,6 @@ TOOLCHAIN_TARGET_TASK += " \
     pkgconfig \
     "
 
-IMAGE_ROOTFS_MAXSIZE = "2097152"
+IMAGE_ROOTFS_MAXSIZE = "4194304"
 
 export IMAGE_BASENAME = "donkeycar-image"

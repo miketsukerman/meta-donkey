@@ -21,6 +21,10 @@ VIRTUAL-RUNTIME_init_manager = "systemd"
 
 MACHINE_FEATURES:remove = "apm"
 
+DISTRO_FEATURES:remove = "x11"
+
+#MACHINE_FEATURES:remove = "vc4graphics"
+
 IMAGE_FSTYPES = "tar.xz ext4 ext4.gz wic wic.bmap"
 
 RPI_USE_U_BOOT = "1"
@@ -28,18 +32,25 @@ RPI_USE_U_BOOT = "1"
 PREFERRED_PROVIDER_u-boot-fw-utils = "libubootenv"
 
 # Choose the board you are building for
-MACHINE = "raspberrypi4"
+#MACHINE = "raspberrypi"
+#MACHINE = "raspberrypi0"
+#MACHINE = "raspberrypi0-wifi"
+#MACHINE = "raspberrypi2"
+#MACHINE = "raspberrypi3"
+MACHINE = "raspberrypi4-64"
+#MACHINE = "raspberrypi-cm"
+#MACHINE = "raspberrypi-cm3"
 
 # Choices are Image or zImage if NOT using u-boot (no u-boot is the default)
 # Choices are uImage or zImage if using u-boot, though if you choose zImage
 # with u-boot you will also have to change the boot script boot command
-KERNEL_IMAGETYPE = "uImage"
+# KERNEL_IMAGETYPE = "zImage"
 
 # uncomment for kernels < 5.6
 WIREGUARD_COMPAT = "1"
 
-DISABLE_VC4GRAPHICS = "1"
-DISABLE_OVERSCAN = "1"
+#DISABLE_VC4GRAPHICS = "1"
+#DISABLE_OVERSCAN = "1"
 ENABLE_UART = "1"
 ENABLE_RPI3_SERIAL_CONSOLE = "1"
 SERIAL_CONSOLES = "115200;ttyAMA0"
@@ -47,10 +58,10 @@ SERIAL_CONSOLES = "115200;ttyAMA0"
 ENABLE_SPI_BUS = "1"
 ENABLE_I2C = "1"
 KERNEL_MODULE_AUTOLOAD_rpi += "i2c-dev i2c-bcm2708"
+
 VIDEO_CAMERA = "1"
 
 # PREFERRED_VERSION_linux-raspberrypi = "5.19.%"
-
 
 # DL_DIR = "/src/oe"
 # SSTATE_DIR = "/oe6/rpi/sstate-cache"
@@ -66,8 +77,9 @@ SDKMACHINE = "x86_64"
 EXTRA_IMAGE_FEATURES = "debug-tweaks"
 
 # for a root passwd, change 123456789 below to your password
-# inherit extrausers
-# EXTRA_USERS_PARAMS = "usermod -P '123456789' root; "
+#INHERIT += "extrausers"
+
+#EXTRA_USERS_PARAMS = "usermod -p $(openssl passwd 123456789) root;"
 
 USER_CLASSES = "buildstats"
 PATCHRESOLVE = "noop"
